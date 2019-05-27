@@ -1,0 +1,57 @@
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  @apply
+    p-0
+    mb-4
+    leading-tight
+    font-bold;
+}
+
+h1,
+.h1 {
+  @apply text-4xl;
+}
+
+h2,
+.h2 {
+  @apply text-3xl mb-3;
+}
+
+h3,
+.h3 {
+  @apply text-2xl mb-2;
+}
+
+
+h4,
+.h4 {
+  @apply text-xl mb-2;
+}
+
+h5,
+.h5,
+h6 .h6 {
+  @apply text-lg mb-2;
+}
+
+.h-reset {
+  font-size: inherit;
+
+  @screen md {
+    font-size: inherit;
+  }
+
+  @screen xl {
+    font-size: inherit;
+  }
+}

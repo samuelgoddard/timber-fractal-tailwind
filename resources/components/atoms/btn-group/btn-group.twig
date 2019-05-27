@@ -1,0 +1,22 @@
+{#
+ # Btn Group atom
+ #
+ # @param buttons {array} array of buttons
+ # @param btn.text {string} The text of the button
+ # @param btn.id {string|null} ID attr value
+ # @param btn.attrs {object|null} HTML attrs for outer HTML element
+ # @param btn.modifiers {array|null} BEM modifier handles for outer HTML element
+  (will be prefixed with Base class)
+ # @param btn.data {object|null} HTML data attrs (no data- prefix, camelcased)
+ # @param btn.href {string|null} href attr value
+ #}
+
+{% if buttons %}
+<div class='btn-group'>
+  {% block content %}
+    {% for btn in buttons|default([]) %}
+      {% include '@btn' with btn only %}
+    {% endfor %}
+  {% endblock %}
+</div>
+{% endif %}

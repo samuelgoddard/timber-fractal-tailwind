@@ -1,0 +1,13 @@
+<form role="search" method="get" id="searchform" action="{{ site.link }}" class="w-full">
+  <div class="flex flex-wrap">
+    <div class="flex-1">
+      <label for="s" class="sr-only">Search</label>
+      <input class="p-2 border border-gray-300 w-full" type="search" name="s" placeholder="{{ messages.search_form.search }}" value="" aria-label="Search">
+    </div>
+    <div class="w-auto">
+      <button type="submit" class="p-2 text-white text-sm h-full block">
+        Search
+      </button>
+    </div>
+  </div>
+</form>

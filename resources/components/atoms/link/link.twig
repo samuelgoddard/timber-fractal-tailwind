@@ -1,0 +1,7 @@
+{#
+ # Link atom
+ #
+ # @param {string} text the link text
+ #}
+
+<a href="#" class="{% if classList is defined and classList %}{% for class in classList %}{{ class }} {% endfor %}{% endif %}">{{ text }}</a>

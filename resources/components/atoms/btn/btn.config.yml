@@ -1,0 +1,41 @@
+title: Buttons
+status: ready
+
+context:
+  text: Default Button
+  href: '#'
+
+variants:
+  -
+    name: button
+    context:
+      el: button
+      text: 'Button Tag Button'
+  -
+    name: long
+    context:
+      text: 'This is an example of a button with really really really really really really long inner text'
+  -
+    name: grey
+    context:
+      text: 'Grey Button'
+      modifiers:
+        - 'grey'
+  -
+    name: white
+    context:
+      text: 'White Button'
+      modifiers:
+        - 'white'
+  -
+    name: naked
+    context:
+      text: 'Naked Button'
+      modifiers:
+        - 'naked'
+  -
+    name: custom-class
+    context:
+      text: 'I have a custom class'
+      classList:
+        - 'border-2 border-blue-400'

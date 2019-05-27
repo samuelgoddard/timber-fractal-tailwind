@@ -1,0 +1,11 @@
+{#
+ # Figure atom
+ #
+ # @param image {object:url,alt} the image object for this figure
+ # @param caption {string} the optional caption for the image
+ #}
+
+<figure>
+  <img class="w-full block p-0 m-0 relative z-10" src="{{ image.url }}" alt="{{ image.alt }}">
+  <figcaption>{{ caption }}</figcaption>
+</figure>

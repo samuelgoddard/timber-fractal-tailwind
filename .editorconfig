@@ -1,0 +1,24 @@
+# editorconfig.org
+
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{js}]
+charset = utf-8
+
+[*.php]
+indent_size = 4
+indent_style = tab
+tab_width = 4
+charset = utf-8
+
+[{package.json}]
+indent_style = space
+indent_size = 2

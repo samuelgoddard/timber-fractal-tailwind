@@ -1,0 +1,11 @@
+{#
+  .pretty-list wrapping class can be on the list or on a parent element
+  @see atoms/pretty
+#}
+{% set el = el | default('ul') %}
+
+<{{ el }} class="list{% if modifiers | default(false) %}{% for modifier in modifiers %} {{ modifier }}{% endfor %}{% endif %}">
+  {% for item in items %}
+    <li>{{ item }}</li>
+  {% endfor %}
+</{{ el }}>

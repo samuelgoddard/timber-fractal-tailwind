@@ -1,0 +1,7 @@
+.page-title {
+  @apply text-3xl font-bold mb-2 block leading-tight;
+
+  @screen md {
+    @apply text-5xl;
+  }
+}

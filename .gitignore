@@ -1,0 +1,29 @@
+# Dependencies
+/vendor
+node_modules/
+
+# Platform, editor directories and files
+.DS_Store
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+*.sublime-project
+*.sublime-workspace
+
+# local env files
+.env
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+storage/composer-backups/
+
+# Build
+static

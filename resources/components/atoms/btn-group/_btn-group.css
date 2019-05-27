@@ -1,0 +1,17 @@
+.btn-group {
+  @apply block;
+
+  & > .btn {
+    @apply block mb-3 mr-3;
+
+    width: 100%;
+  }
+
+  @screen sm {
+    & > .btn {
+      @apply inline-block;
+
+      width: auto;
+    }
+  }
+}

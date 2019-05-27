@@ -1,0 +1,36 @@
+title: Link
+status: ready
+
+context:
+  text: An example link
+  href: '#'
+
+variants:
+  -
+    name: bold
+    context:
+      classList:
+        - font-bold
+  -
+    name: no-underline
+    context:
+      classList:
+        - no-underline
+  -
+    name: grey
+    context:
+      classList:
+        - text-gray-500
+        - hover:text-gray-800
+        - focus:text-gray-800
+  -
+    name: small
+    context:
+      classList:
+        - text-sm
+
+  -
+    name: fancy
+    context:
+      classList:
+        - fancy-link

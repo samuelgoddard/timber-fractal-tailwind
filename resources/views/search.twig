@@ -1,0 +1,24 @@
+{% extends "_layouts/application.twig" %}
+
+{% block content %}
+  {% if posts is not empty %}
+    <h1 class="title">
+      {{ title }}
+    </h1>
+
+    {% for post in posts %}
+      {% include '_includes/article.twig' %}
+      <hr/>
+    {% endfor %}
+
+    {% if posts.pagination.pages %}
+      {% include '_includes/pagination.twig' %}
+    {% endif %}
+
+  {% else %}
+    <h1 class="title">
+      {{ messages.search.no_results }}
+    </h1>
+    {% include 'searchform.twig' %}
+  {% endif %}
+{% endblock %}

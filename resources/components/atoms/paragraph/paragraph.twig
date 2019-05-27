@@ -1,0 +1,7 @@
+{#
+ # Paragraph atom
+ #
+ # @param {string} text the text of the paragraph
+ #}
+
+<p class="{% if classList is defined and classList %}{% for class in classList %}{{ class }} {% endfor %}{% endif %}">{{text }}</p>

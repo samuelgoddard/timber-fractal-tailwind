@@ -1,0 +1,20 @@
+title: Headings
+status: ready
+
+context:
+  headings:
+    -
+      message: Pellentesque feugiat mauris sed commodo vulputate.
+      tag: h1
+    -
+      message: Pellentesque feugiat mauris sed commodo vulputate.
+      tag: h2
+    -
+      message: Pellentesque feugiat mauris sed commodo vulputate.
+      tag: h3
+    -
+      message: Pellentesque feugiat mauris sed commodo vulputate.
+      tag: h4
+    -
+      message: Pellentesque feugiat mauris sed commodo vulputate.
+      tag: h5

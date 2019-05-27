@@ -1,0 +1,47 @@
+<header class="my-6">
+  <div class="container">
+    <div class="flex flex-wrap">
+      <div class="">
+        <a class="logo bg-gray-300 p-2 font-mono" href="{{ site.link }}">
+          {{ site.title }}
+        </a>
+      </div>
+      <nav class="ml-8 flex-1 hidden md:block">
+        <div class="flex flex-wrap overflow-hidden md:-mx-1">
+        {% for item in menu.get_items %}
+          {% if item.get_children %}
+            {# <ul class="navbar-item has-dropdown is-hoverable md:px-1">
+              <a class="navbar-link {{ item.class }}" href="{{ site.link }}">
+                {{ item.title }}
+              </a>
+
+              <ul class="navbar-dropdown is-hover second-level">
+                {% for child in item.get_children %}
+                  <li class="">
+                    <a class="navbar-item {{ child.class }} {{ child.get_children ? 'has-children' }}" href="{{ child.link }}">
+                      {{ child.title }}
+                    </a>
+                    {% if child.get_children %}
+                      <div class="navbar-dropdown third-level">
+                        {% for grandchild in child.get_children %}
+                          <a class="navbar-item {{ grandchild.class }}" href="{{ grandchild.link }}">
+                            {{ grandchild.title }}
+                          </a>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            </ul> #}
+          {% else %}
+            <a class="navbar-item md:px-1 {{ item.class }}" href="{{ item.link }}">
+              {{ item.title }}
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </nav>
+  </div>
+  </div>
+</header>

@@ -1,0 +1,51 @@
+.btn, button {
+  @apply
+    inline-block
+    text-white
+    text-left
+    font-bold
+    bg-red-700
+    no-underline
+    px-4
+    py-2;
+
+  &:hover,
+  &:focus {
+    @apply bg-red-900 text-white cursor-pointer;
+  }
+}
+
+.btn--grey {
+  @apply bg-gray-300 text-black;
+
+  &:hover,
+  &:focus {
+    @apply bg-gray-500 text-white;
+  }
+}
+
+.btn--white {
+  @apply bg-white text-black;
+
+  &:hover,
+  &:focus {
+    @apply bg-white text-blue-500;
+  }
+}
+
+/* Naked Variant */
+.btn--naked {
+  @apply bg-transparent text-black;
+
+  &:hover,
+  &:focus {
+    @apply bg-transparent text-blue-500;
+  }
+}
+
+.btn,
+button {
+  &:disabled {
+    @apply opacity-25;
+  }
+}

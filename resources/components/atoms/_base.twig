@@ -1,0 +1,75 @@
+{##
+  # Atom base component
+  #
+  # @param {string} baseClass required HTML base classname for this atom
+  # @param {string} el optional tag name to use (defaults to div)
+  #
+  # @param {array} classList optional HTML classnames to apply
+  # @param {array} modifiers optional BEM modifiers to apply, will be prefixed with <baseClass>--
+  # @param {string} id optional ID attr value
+  # @param {array} attrs optional attributes to apply
+  # @param {array} data optional data- attributes to apply
+#}
+
+{%- macro attributes(attrs, prefix) -%}
+  {% if prefix is not defined %}
+    {% set prefix = false %}
+  {% endif %}
+  {%- for name, value in attrs -%}
+    {%- if value == false -%}
+      {#- no output -#}
+    {%- else -%}
+      {{ prefix ? prefix }}{{- name }}="{{ value | trim }}"
+    {% endif %}
+  {% endfor -%}
+{%- endmacro -%}
+
+{%- import _self as helpers -%}
+
+{%- set el = el is defined ? el : 'div' -%}
+{%- set id = id is defined ? id : false -%}
+
+{%- set selfClosingEls = [
+  'area',
+  'base',
+  'br',
+  'col',
+  'embed',
+  'hr',
+  'img',
+  'input',
+  'link',
+  'meta',
+  'param',
+  'source',
+  'track',
+  'wbr',
+] -%}
+
+{% set isSelfClosing = el in selfClosingEls %}
+
+{#- HTML Classnames -#}
+{%- set classList = classList | default([]) -%}
+
+{#- BEM modifier classes -#}
+{%- set modifiers = modifiers | default([]) -%}
+
+{#- Data attrs -#}
+{%- set data = data | default({}) -%}
+
+{#- Generic HTML attrs -#}
+{%- set attrs = attrs | default({}) -%}
+<{{ el }}
+  class="{{ baseClass }}
+  {%- if classList %} {{ classList | join(' ')}}{%- endif -%}
+  {%- if modifiers -%}
+    {%- for modifier in modifiers %} {{ baseClass }}--{{ modifier }}{% endfor -%}{%- endif -%}
+        "
+        {{ helpers.attributes(attrs) }}
+        {{ helpers.attributes(data, 'data-') }}>
+    {%- if not isSelfClosing -%}
+      {%- block content -%}
+        {{- content | trim -}}
+      {%- endblock -%}
+      </{{ el }}>
+    {%- endif -%}

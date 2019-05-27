@@ -1,0 +1,21 @@
+/**
+ * Styles for list atom
+ */
+
+
+.list {
+  @apply mb-5
+    pl-5;
+
+  li {
+    @apply mb-2;
+  }
+
+  ul& {
+    @apply list-disc;
+  }
+
+  ol& {
+    @apply list-decimal;
+  }
+}

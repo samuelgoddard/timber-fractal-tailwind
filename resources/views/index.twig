@@ -1,0 +1,28 @@
+{% extends "_layouts/application.twig" %}
+
+{% block content %}
+  {% include 'molecules/hero/hero.twig' with { 
+    heading: site.title | capitalize,
+    excerpt: site.description,
+    classList: ['py-16 mb-6 md:mb-8']
+  } only %}
+
+  <div class="container mx-auto">
+    <div class="flex flex-wrap overflow-hidden md:-mx-5">
+      <div class="w-full md:w-4/6 lg:w-3/4 md:px-5">
+        {% for post in posts %}
+          <div class="mb-5 md:mb-8">
+            {% include '_includes/article.twig' %}
+          </div>
+        {% endfor %}
+
+        {% if posts.pagination.pages %}
+          {% include '_includes/pagination.twig' %}
+        {% endif %}
+      </div>
+      <aside class="w-full md:w-2/6 lg:w-1/4 md:px-5">
+        {{ main_sidebar }}
+      </aside>
+    </div>
+  </div>
+{% endblock %}

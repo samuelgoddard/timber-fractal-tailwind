@@ -1,0 +1,25 @@
+a {
+  @apply underline;
+
+  color: inherit;
+}
+
+a:hover,
+a:focus {
+  @apply text-blue-500;
+}
+
+.fancy-link {
+  @apply
+    text-blue-500
+    text-base
+    font-bold
+    underline
+    inline-block
+    transition;
+
+  &:hover,
+  &:focus {
+    @apply text-blue-800;
+  }
+}

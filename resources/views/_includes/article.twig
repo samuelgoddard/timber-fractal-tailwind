@@ -1,0 +1,35 @@
+<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+  <header class="border-b border-gray-300 mb-3">
+    <h2 class="text-2xl font-medium h-trim mb-2">
+      <a href="{{ post.link }}">{{ post.title }}</a>
+    </h2>
+    <div class="flex flex-wrap overflow-hidden md:-mx-2 mb-3">
+      <time class="md:px-2">
+        <small>{{ post.date }}</small>
+      </time>
+      <div class="md:px-2">
+        <a class="text-xs" href="{{ post.author.link }}"><span>{{ post.author }}</span></a>
+      </div>
+      {% if post.can_edit %}
+        <div class="md:px-2">
+          <a class="text-xs" href="{{ post.get_edit_url }}"><span>{{ messages.article.edit }}</span></a>
+        </div>
+      {% endif %}
+    </div>
+  </header>
+
+  {{ post.content | length > 50 
+    ? post.content | slice(0, 120) ~ "... <a href='#{ post.link }'>read more</a>"
+    : post.content
+  }}
+
+  {# Tags #}
+  <footer>
+    <ul>
+      {% for tag in post.tags %}
+        <li>
+          <a href="{{ tag.link }}">{{ tag.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </footer>
+</article>

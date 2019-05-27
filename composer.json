@@ -1,0 +1,60 @@
+{
+  "name": "skeleton/starter",
+  "description": "Wordpress Starter.",
+  "license": "MIT",
+  "keywords": [
+    "webpack",
+    "timber",
+    "wordpress",
+    "composer"
+  ],
+  "type": "wordpress-theme",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Sam Goddard",
+      "email": "hello@samgoddard.co.uk"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "extra": {
+    "installer-paths": {
+      "../../plugins/{$name}/": [
+        "wpackagist-plugin/*",
+        "type:wordpress-plugin"
+      ]
+    }
+  },
+  "require": {
+    "php": "^7.0",
+    "symfony/var-dumper": "^4.1",
+    "symfony/console": "^4.1",
+    "league/flysystem": "^1.0",
+    "symfony/finder": "^4.1",
+    "vlucas/phpdotenv": "^2.4",
+    "timber/timber": "^1.9.4"
+  },
+  "autoload": {
+    "files": [
+      "app/helpers.php",
+      "resources/languages/messages.php"
+    ],
+    "classmap": [
+      "app/timber-extends"
+    ],
+    "psr-4": {
+      "Skeleton\\Models\\": "app/models/",
+      "Skeleton\\Utils\\": "app/utils/"
+    }
+  },
+  "scripts": {
+    "post-create-project-cmd": [
+      "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ]
+  }
+}

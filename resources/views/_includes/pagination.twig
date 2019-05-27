@@ -1,0 +1,38 @@
+<nav class="pagination" role="navigation" aria-label="pagination">
+
+  {% if pagination.prev %}
+    <a href="{{ pagination.prev.link }}"
+       class="pagination-prev">&laquo;</a>
+  {% else %}
+    <button class="pagination-prev" disabled>&laquo;</button>
+  {% endif %}
+
+  {% if pagination.next %}
+    <a href="{{ pagination.next.link }}"
+       class="pagination-next">&raquo;</a>
+  {% else %}
+    <button class="pagination-next" disabled>&raquo;</button>
+  {% endif %}
+
+  {# PAGINATION LIST #}
+  <ul class="pagination-list">
+    {% for page in pagination.pages %}
+      {% if page.link %}
+        <li>
+          <a href="{{ page.link }}" class="{{ page.class }}"
+             aria-label="Goto page {{ page.title }}">
+             {{ page.title }}
+          </a>
+        </li>
+      {% else %}
+        {% if page.class == 'dots' %}
+          <li>
+            <span class="">&hellip;</span>
+          </li>
+        {% else %}
+          <span class="is--active {{ page.class }}">{{ page.title }}</span>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>

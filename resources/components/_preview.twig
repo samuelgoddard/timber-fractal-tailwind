@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preview Layout</title>
+
+  {% if isBuild() %}
+    <link media="all" rel="stylesheet" href="{{ '/css/styles.css' | rev | path }}">
+  {% else %}
+    <link media="all" rel="stylesheet" href="{{ '/css/styles.css' | path }}">
+  {% endif %}
+
+  <script>
+    window.APP = {
+      modules: {},
+      addModule: function(name, config) {
+        this.modules[name] = this.modules[name] || [];
+        this.modules[name].push(config);
+      },
+      DEBUG: 0,
+      CONFIG: {
+      },
+    };
+  </script>
+  
+  <style>
+    body {
+      {% if _target.context.preview.noPad == true %}
+        margin: 0px !important;
+      {% else %}
+        margin: 25px !important;
+      {% endif %}
+    }
+  </style>
+</head>
+<body class="antialiased text-base font-sans">
+
+  {{ yield }}
+
+  {% if isBuild() %}
+    <script src="{{ 'vendor.js' | rev | path }}"></script>
+    <script src="{{ 'app.js' | rev | path }}"></script>
+  {% else %}
+    <script src="{{ '/js/vendor.js' | rev }}"></script>
+    <script src="{{ '/js/scripts.js' | path }}"></script>
+  {% endif %}
+</body>
+</html>

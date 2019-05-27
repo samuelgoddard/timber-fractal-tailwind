@@ -1,0 +1,8 @@
+.hr {
+  @apply my-3 w-full border-b border-black;
+  height: 2px;
+
+  @screen lg {
+    @apply my-5;
+  }
+}

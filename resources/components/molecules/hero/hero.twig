@@ -1,0 +1,13 @@
+<div class="m-hero bg-gray-200{% if classList | default(false) %}{% for class in classList %} {{ class }}{% endfor %}{% endif %}">
+  <div class="container">
+    <h2 class="page-title trim mb-1">{{ heading }}</h2>
+    
+    {% if subHeading | default(false) %}
+      <h2 class="trim mb-1">{{ subHeading }}</h2>
+    {% endif %}
+    
+    {% if excerpt | default(false) %}
+      <p class="text-lg">{{ excerpt }}</p>
+    {% endif %}
+  </div>
+</div>

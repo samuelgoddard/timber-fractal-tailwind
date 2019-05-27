@@ -1,0 +1,39 @@
+/* Tailwind Reset and Base Components */
+@import "tailwindcss/base.css";
+@import "tailwindcss/components.css";
+
+/* Atoms */
+@import "../../components/atoms/btn/_btn.css";
+@import "../../components/atoms/btn-group/_btn-group.css";
+@import "../../components/atoms/figure/_figure.css";
+@import "../../components/atoms/headings/_headings.css";
+@import "../../components/atoms/hr/_hr.css";
+@import "../../components/atoms/link/_link.css";
+@import "../../components/atoms/list/_list.css";
+@import "../../components/atoms/meta/_meta.css";
+@import "../../components/atoms/page-title/_page-title.css";
+@import "../../components/atoms/paragraph/_paragraph.css";
+@import "../../components/atoms/table/_table.css";
+
+/* Utilities */
+@import "../../components/utilities/_trim.css";
+@import "../../components/utilities/_pretty.css";
+
+/* Tailwind Utilities */
+@import "tailwindcss/utilities.css";
+
+body {
+  @apply antialiased bg-white text-black text-base;
+}
+
+.aligncenter {
+  @apply mx-auto;
+}
+
+.alignleft {
+  @apply float-left mr-5 mb-5;
+}
+
+.alignright {
+  @apply float-right ml-5 mb-5;
+}

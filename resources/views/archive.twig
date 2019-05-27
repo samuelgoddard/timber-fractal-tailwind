@@ -1,0 +1,19 @@
+{% extends "_layouts/application.twig" %}
+
+{% block content %}
+  {% include 'molecules/hero/hero.twig' with { 
+    subHeading: title,
+    classList: ['py-6 mb-6']
+  } only %}
+
+  <div class="container">
+    {% for post in posts %}
+      {% include '_includes/article.twig' %}
+      <hr />
+    {% endfor %}
+
+    {% if posts.pagination.pages %}
+      {% include '_includes/pagination.twig' %}
+    {% endif %}
+  </div>
+{% endblock %}

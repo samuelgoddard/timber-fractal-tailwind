@@ -1,0 +1,35 @@
+<div class="{{ comment.comment_type }}" id="blog-comment-{{ comment.ID }}">
+  <article id="comment-{{ comment.ID }}" class="border-b border-gray-300 mb-4 pb-4">
+    <div class="md:flex md:flex-wrap items-center mb-4">
+      <img src="{{ comment.author.avatar }}" alt="Author Image" class="w-16 mb-4 md:mb-0" />
+
+      <div class="md:ml-4">
+        <span class="font-medium block">{{ comment.author.name }}</span>
+        <time>
+          <small>{{ comment.date }} {{ comment.time }}</small>
+        </time>
+      </div>
+    </div>
+
+    <div class="mb-3 pretty">
+      {{ comment.comment_content|wpautop }}
+    </div>
+
+    {# Message Footer #}
+    <footer>
+      {{ comment.reply_link('<span>' ~ messages.comment.reply ~ '</span>') }}
+    </footer>
+  </article>
+
+  <section>
+    {% if post.comments %}
+      <div class="comments">
+      {% for cmt in comment.children %}
+        <div class="pl-{{ loop.index * 4 }}">
+          {% include "comment.twig" with { comment:cmt } %}
+        </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </section>
+</div>

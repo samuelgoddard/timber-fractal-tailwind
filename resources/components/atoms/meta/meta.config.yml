@@ -1,0 +1,13 @@
+title: Meta
+status: ready
+
+context:
+  text: Meta Tag Example
+
+variants:
+  -
+    name: anchor
+    context:
+      el: a
+      href: '#'
+      text: Anchored Meta Tag Example

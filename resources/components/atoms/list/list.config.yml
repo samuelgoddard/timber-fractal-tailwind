@@ -1,0 +1,16 @@
+title: List
+status: ready
+
+context:
+  items:
+    - Lorem ipsum dolor sit amet consecteteur adipicising elit
+    - Lorem ipsum dolor sit amet consecteteur adipicising elit
+    - Lorem ipsum dolor sit amet consecteteur adipicising elit
+    - Lorem ipsum dolor sit amet consecteteur adipicising elit
+    - Lorem ipsum dolor sit amet consecteteur adipicising elit
+
+variants:
+  -
+    name: ordered
+    context:
+      el: ol

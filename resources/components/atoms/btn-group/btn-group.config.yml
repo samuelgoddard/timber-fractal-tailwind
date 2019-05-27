@@ -1,0 +1,48 @@
+title: Button Group
+status: ready
+
+context:
+  text: Button Group
+  href: '#'
+
+  buttons:
+    -
+      text: Button Group Button
+      href: '#'
+    -
+      text: Button Group Button
+      href: '#'
+    -
+      text: Button Group Button
+      href: '#'
+
+variants:
+  -
+    name: kitchen-sink
+    context:
+      buttons:
+        -
+          el: button
+          text: 'Button Tag Button'
+        -
+          el: button
+          text: Submit button
+          type: 'submit'
+          modifiers:
+            - 'black'
+        -
+          text: 'This is an example of a button with really really really really really really long inner text'
+        -
+          text: 'Black Button'
+          modifiers:
+            - 'black'
+        -
+          text: 'Naked Button'
+          modifiers:
+            - 'naked'
+        -
+          text: 'Button'
+        -
+          text: 'Naked Button'
+          modifiers:
+            - 'naked'

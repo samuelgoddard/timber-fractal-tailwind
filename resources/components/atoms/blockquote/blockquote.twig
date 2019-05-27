@@ -1,0 +1,14 @@
+{#
+ # Blockquote atom
+ #
+ # @param {string} text The text of the blockquote
+ # @param {string} attribution The optional attribution text of the blockquote
+ #}
+
+ <blockquote>
+   <p>&ldquo;{{ text }}&rdquo;</p>
+
+   {% if attribution | default(false) %}
+    <footer><span class="font-bold">- {{ attribution }}</span></footer>
+   {% endif %}
+</blockquote>

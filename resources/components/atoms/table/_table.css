@@ -1,0 +1,15 @@
+.table-styled {
+  @apply border-collapse table-auto w-full;
+
+  th,
+  td {
+    @apply border border-gray-300 p-2 text-left align-top;
+  }
+
+  thead tr {
+    & th,
+    td {
+      @apply border-b-2 border-gray-300 text-left align-top;
+    }
+  }
+}

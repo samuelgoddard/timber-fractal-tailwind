@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js sr {{site.language_attributes}}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>
+      {% if wp_title %}
+        {{ wp_title }} - {{ site.name }}
+      {% else %}
+        {{ site.name }}
+      {% endif %}
+    </title>
+
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="icon" href="{{ favicon }}">
+
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="{{ site.description }}">
+
+    <link rel="pingback" href="{{ site.pingback_url }}"/>
+
+    <script>
+      window.APP = {
+        modules: {},
+        addModule: function(name, config) {
+          this.modules[name] = this.modules[name] || [];
+          this.modules[name].push(config);
+        },
+        DEBUG: 0,
+        CONFIG: {
+        },
+      };
+    </script>
+
+    {{ function('wp_head') }}
+  </head>
+
+
+  <body class="{{ body_class }}">
+    {% if not in_production %}
+      <div class="fixed bottom-0 right-0 bg-gray-400 font-mono p-2 text-xs">
+        {{ current_template_file }}
+      </div>
+    {% endif %}
+
+    {# <h6 class="mb-0">
+      <a href="#mod-1"
+        id="toggle-more-1"
+        data-toggle="toggle"
+        data-target="#mod-1"
+        aria-expanded="false"
+        aria-controls="mod-1">
+        Title <span class="font-normal">(Hey)</span>
+      </a>
+    </h6>
+    <div id="mod-1" class="js:hidden pt-4">
+    <div class="mb-5 trim">This is some hidden stuff</div>
+    </div>
+    #}
+
+    {% include '_includes/chrome/header.twig' %}
+
+    <main id="app">
+      {% block content %}
+        {{ messages.base.no_content }}
+      {% endblock %}
+    </main>
+
+    {% include '_includes/chrome/footer.twig' %}
+    {{ function('wp_footer') }}
+
+  </body>
+  </html>

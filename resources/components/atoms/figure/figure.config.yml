@@ -1,0 +1,12 @@
+title: Figure
+status: ready
+context:
+  image:
+    url: https://placeimg.com/640/480/animals
+    alt: This is an example image
+
+variants:
+  -
+    name: with-caption
+    context:
+      caption: This is an example caption

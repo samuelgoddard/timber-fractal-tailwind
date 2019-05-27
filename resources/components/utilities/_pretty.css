@@ -1,0 +1,99 @@
+/*
+  Pretty utility
+
+  Make common plain html elements display a bit nicer
+  (e.g. in running text / RTE output)
+ */
+
+ .pretty {
+  @apply .pretty-lists
+    .pretty-headings
+    .pretty-tables;
+
+  code, pre {
+    @apply max-w-full overflow-scroll;
+  }
+}
+
+/**
+ * Allow triggering pretty lists by applying a wrapping class
+ */
+.pretty-lists {
+  ul,
+  ol {
+    @apply .list;
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+}
+
+.pretty-tables {
+  table {
+    @apply .table-styled;
+  }
+}
+
+/*
+  Where a heading follows another element, add top margin
+  to give the effect of a pause / break
+
+ */
+.pretty-headings {
+  * + h1,
+  * + h2,
+  * + h3 {
+    @apply mt-8;
+
+    @screen xl {
+      @apply mt-12;
+    }
+  }
+
+  * + h4,
+  * + h5 {
+    @apply mt-6;
+
+    @screen xl {
+      @apply mt-8;
+    }
+  }
+
+  * + h6 {
+    @apply mt-4;
+  }
+
+  /*
+    Now remove those styles in the case that a heading immediately
+    follows another heading
+   */
+  h1 + h1,
+  h1 + h2,
+  h1 + h3,
+  h1 + h4,
+  h1 + h5,
+  h1 + h6,
+  h2 + h2,
+  h2 + h3,
+  h2 + h4,
+  h2 + h5,
+  h2 + h6,
+  h3 + h3,
+  h3 + h4,
+  h3 + h5,
+  h3 + h6,
+  h4 + h4,
+  h4 + h5,
+  h4 + h6,
+  h5 + h5,
+  h5 + h6,
+  h6 + h6 {
+    @apply mt-0;
+  }
+}
+
