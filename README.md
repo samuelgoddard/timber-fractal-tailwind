@@ -24,6 +24,7 @@
 ## Installation
 * clone this repo into your `wp-content/themes` folder
 * `cd timber-fractal-tailwind`
+* `composer install`
 * `yarn` **or** `npm install`
 * define your local URL in `build/config.js`
 * `yarn watch` **or** `npm run watch` to run a development server, as well as a Fractal server alongside at a seperate port
