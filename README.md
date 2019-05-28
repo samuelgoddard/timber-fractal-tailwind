@@ -26,6 +26,7 @@
 * `cd timber-fractal-tailwind`
 * `composer install`
 * `yarn` **or** `npm install`
+* duplicate the `.env.example` file as `.env` - `cp .env.example .env`
 * define your local URL in `build/config.js`
 * `yarn watch` **or** `npm run watch` to run a development server, as well as a Fractal server alongside at a seperate port
 * `yarn prod` **or** `npm run prod` to build for production
