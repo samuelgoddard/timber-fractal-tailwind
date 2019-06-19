@@ -68,7 +68,7 @@
     "svgo": "^1.1.0",
     "svgo-loader": "^2.1.0",
     "url-loader": "^1.0.1",
-    "vue-loader": "^15.7.7",
+    "vue-loader": "^15.7.0",
     "vue-template-compiler": "^2.5.16",
     "webpack-fix-style-only-entries": "^0.0.5",
     "webpack-manifest-plugin": "^2.0.3"
