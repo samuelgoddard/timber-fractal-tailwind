@@ -7,7 +7,7 @@
   } only %}
 
   <div class="container">
-    <article class="border-b border-gray-300 mb-5 pb-5">
+    <article class="border-b border-grey-base mb-5 pb-5">
       <div class="flex flex-wrap overflow-hidden md:-mx-2 mb-3">
         <time class="md:px-2">
           <small>{{ post.date }} {{ post.time }}</small>
@@ -37,7 +37,7 @@
       </div>
 
       {% if post.comment_status == "open" %}
-        <div class="w-full border-t pt-5 mt-5 border-grey-300">
+        <div class="w-full border-t pt-5 mt-5 border-grey-base">
           {% include "comment-form.twig" %}
         </div>
       {% endif %}

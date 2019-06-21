@@ -5,7 +5,9 @@
  # @param caption {string} the optional caption for the image
  #}
 
-<figure>
+<figure {% if classList | default(false) %}class="{% for class in classList %}{{ class }} {% endfor %}"{% endif %}>
   <img class="w-full block p-0 m-0 relative z-10" src="{{ image.url }}" alt="{{ image.alt }}">
-  <figcaption>{{ caption }}</figcaption>
+  {% if caption | default(false) %}
+    <figcaption>{{ caption }}</figcaption>
+  {% endif %}
 </figure>

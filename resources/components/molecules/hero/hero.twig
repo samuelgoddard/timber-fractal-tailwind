@@ -1,4 +1,14 @@
-<div class="m-hero bg-gray-200{% if classList | default(false) %}{% for class in classList %} {{ class }}{% endfor %}{% endif %}">
+{#
+ # Hero molecule
+ #
+ # @param heading {string} the heading for this hero
+ # @param *optional backgroundImage {object:url,alt} the backgroundImage for this hero
+ # @param *optional subHeading {string} the subheading for this hero
+ # @param *optional excerpt {string} the excerpt for this hero
+ # @param *optional classList {array} the classList array that can be passed into this hero
+ #}
+ 
+<div class="m-hero bg-grey-light{% if classList | default(false) %}{% for class in classList %} {{ class }}{% endfor %}{% endif %}">
   <div class="container">
     <h2 class="page-title trim mb-1">{{ heading }}</h2>
     

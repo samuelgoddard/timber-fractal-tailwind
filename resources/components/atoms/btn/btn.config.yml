@@ -38,4 +38,4 @@ variants:
     context:
       text: 'I have a custom class'
       classList:
-        - 'border-2 border-blue-400'
+        - 'border-2 border-secondary'

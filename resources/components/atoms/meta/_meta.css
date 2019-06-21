@@ -6,7 +6,7 @@
   @apply
     text-sm
     text-white
-    bg-red-700
+    bg-primary-base
     inline-block
     no-underline
     px-2
@@ -19,6 +19,6 @@
 a.meta {
   &:hover,
   &:focus {
-    @apply bg-red-900 text-white;
+    @apply bg-primary-dark text-white;
   }
 }
