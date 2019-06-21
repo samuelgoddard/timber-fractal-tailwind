@@ -1,0 +1,35 @@
+{#
+ # Hero molecule
+ #
+ # @param heading {string} the heading for this hero
+ # @param *optional backgroundImage {object:url,alt} the backgroundImage for this hero
+ # @param *optional subHeading {string} the subheading for this hero
+ # @param *optional excerpt {string} the excerpt for this hero
+ # @param *optional classList {array} the classList array that can be passed into this hero
+ #}
+
+<div class="m-teaser border border-grey-base p-6 {% if classList | default(false) %}{% for class in classList %} {{ class }}{% endfor %}{% endif %}">
+  {% if image | default(false) %}
+    {% include '@components/atoms/figure/figure.twig' with { 
+      image: image,
+      classList: ['block']
+    } only %}
+  {% endif %}
+
+  <h2>{{ heading }}</h2>
+
+  {% if subHeading | default(false) %}
+    <h4>{{ subHeading }}</h4>
+  {% endif %}
+
+  {% if excerpt | default(false) %}
+    <p>{{ excerpt | default(false) | length > 50 ? excerpt | slice(0, 120) : excerpt }}</p>
+  {% endif %}
+
+  {% if url | default(false) %}
+  <div>
+    <a href="{{ url }}" class="btn">Read more</a>
+  </div>
+  {% endif %}
+
+</div>

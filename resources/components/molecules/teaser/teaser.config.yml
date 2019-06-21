@@ -1,0 +1,19 @@
+title: Teaser
+group: molecules
+status: ready
+
+context:
+  heading: Teaser Heading
+  subHeading: Teaser Subheading
+  excerpt: >-
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <a href="#">Ut enim ad minima</a> veniam, quis nostrud exercitation.
+  url: '#'
+
+variants:
+  -
+    name: With Image
+    context:
+      image: 
+        url: https://placedog.net/500/300
+        alt: Placeholder
+      heading: Teaser With An Image
