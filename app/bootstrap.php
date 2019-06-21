@@ -27,3 +27,8 @@ function localize()
 }
 
 add_action('after_setup_theme', 'localize');
+
+add_filter('timber/loader/loader', function($loader){
+	$loader->addPath(__DIR__ . "/../resources/components", "components");
+	return $loader;
+});
