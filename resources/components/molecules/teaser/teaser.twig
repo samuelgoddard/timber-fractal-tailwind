@@ -1,5 +1,5 @@
 {#
- # Hero molecule
+ # Teaser molecule
  #
  # @param heading {string} the heading for this hero
  # @param *optional backgroundImage {object:url,alt} the backgroundImage for this hero
@@ -10,7 +10,7 @@
 
 <div class="m-teaser border border-grey-base p-6 {% if classList | default(false) %}{% for class in classList %} {{ class }}{% endfor %}{% endif %}">
   {% if image | default(false) %}
-    {% include '@components/atoms/figure/figure.twig' with { 
+    {% include '@components/atoms/figure/figure.twig' with {
       image: image,
       classList: ['block']
     } only %}

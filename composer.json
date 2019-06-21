@@ -41,8 +41,7 @@
   },
   "autoload": {
     "files": [
-      "app/helpers.php",
-      "resources/languages/messages.php"
+      "app/helpers.php"
     ],
     "classmap": [
       "app/timber-extends"

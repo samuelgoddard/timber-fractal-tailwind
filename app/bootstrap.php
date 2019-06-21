@@ -18,16 +18,6 @@ require_once __DIR__ . '/../app/config/autoload.php';
 // Init Sessions
 Session::init();
 
-/**
- * Loads the theme's translated strings.
- */
-function localize()
-{
-    load_theme_textdomain('skeleton', get_template_directory() . '/resources/languages');
-}
-
-add_action('after_setup_theme', 'localize');
-
 add_filter('timber/loader/loader', function($loader){
 	$loader->addPath(__DIR__ . "/../resources/components", "components");
 	return $loader;

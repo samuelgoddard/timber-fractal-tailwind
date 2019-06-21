@@ -13,7 +13,7 @@ variants:
   -
     name: With Image
     context:
-      image: 
+      image:
         url: https://placedog.net/500/300
         alt: Placeholder
       heading: Teaser With An Image

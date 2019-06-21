@@ -1,7 +1,7 @@
 {% extends "_layouts/application.twig" %}
 
 {% block content %}
-  {% include 'molecules/hero/hero.twig' with { 
+  {% include 'molecules/hero/hero.twig' with {
     subHeading: post.title,
     classList: ['py-6 mb-2']
   } only %}
@@ -15,12 +15,12 @@
         {% if post.can_edit %}
           <div class="md:px-2">
             <a href="{{ post.get_edit_url }}">
-              <span class="text-xs">{{ messages.single.edit }}</span>
+              <span class="text-xs">Edit</span>
             </a>
           </div>
         {% endif %}
       </div>
-      
+
       <div class="pretty">
         {{ post.content }}
       </div>
@@ -29,7 +29,7 @@
     <section>
       <div>
         {% if post.comments is not empty %}
-          <h3 class="font-medium mb-2">{{ messages.single.comments }}</h3>
+          <h3 class="font-medium mb-2">Comments</h3>
           {% for comment in post.comments %}
             {% include "comment.twig" %}
           {% endfor %}
