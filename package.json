@@ -17,6 +17,7 @@
     "@babel/preset-env": "^7.1.6",
     "@frctl/fractal": "^1.1.7",
     "@frctl/twig": "^1.0.0-beta.5",
+    "@samuelgoddard/twig": "samuelgoddard/twig",
     "@fullhuman/postcss-purgecss": "^1.2.0",
     "autoprefixer": "^9.3.1",
     "babel-eslint": "^10.0.1",
