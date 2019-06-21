@@ -6,7 +6,8 @@ const fs = require("fs");
 const fractal = module.exports = require('@frctl/fractal').create();
 
 const mandelbrot = require("@frctl/mandelbrot");
-const twigAdapter = require("@frctl/twig");
+const twigAdapter = require("@samuelgoddard/twig");
+
 const jsonfile = require("jsonfile");
 
 const assetManifestPath = path.resolve(__dirname, "static/manifest.json");
@@ -15,7 +16,7 @@ const assetManifest = fs.existsSync(assetManifestPath)
   ? jsonfile.readFileSync(assetManifestPath)
   : {};
 
-fractal.set('project.title', 'FooCorp Component Library');
+fractal.set('project.title', 'Boilerplate Component Library');
 
 fractal.components.set('path', __dirname + '/resources/components');
 
@@ -40,6 +41,10 @@ fractal.components.engine(twigAdapter({
   functions: {
     isBuild: () => process.argv.includes("build"),
   },
+  namespaces: {
+    'components': ''
+  },
+  handlePrefix: '%',
 }));
 fractal.components.set("ext", ".twig");
 
