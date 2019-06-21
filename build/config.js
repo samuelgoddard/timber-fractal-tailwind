@@ -7,14 +7,14 @@ module.exports = {
    *
    * This is for Webpack that it can handle assets relative path right.
    */
-  assetsPath: '/wp-content/themes/skeleton/',
+  assetsPath: '/wp-content/themes/timber-fractal-tailwind/',
 
   /**
    * Define here your dev server url here.
    *
    * This is for Browsersync.
    */
-  devUrl: 'http://skeleton.localdev/',
+  devUrl: 'http://boilerplate.localdev/',
 
   /**
    * You can whitelist selectors to stop purgecss from removing them from your CSS
