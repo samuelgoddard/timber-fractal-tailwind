@@ -1,0 +1,37 @@
+{%- set navPages -%}
+[
+	{%- for page in items -%}
+		{
+			"title": "{{ page.title }}",
+			"slug": "{{ page.slug }}",
+			"url": "{{ page.link }}",
+			"class": "{{ page.class }}",
+			"id": {{ page.id }}{%- if page.get_children -%},{%- endif -%}
+			{%- if page.get_children -%}
+				"children": [
+					{%- for child in page.get_children -%}
+					{
+						"title": "{{ child.title }}",
+						"slug": "{{ child.slug }}",
+						"url": "{{ child.link }}",
+						"class": "{{ child.class }}",
+						"id": {{ child.id }}
+					}{%- if not loop.last -%},{%- endif -%}
+					{%- endfor -%}
+				]
+			{%- endif -%}
+		}{%- if not loop.last -%},{%- endif -%}
+	{%- endfor -%}
+]
+{%- endset -%}
+
+<script>
+	(function(APP){
+		APP.addModule('mobileMenu', {
+			el: '[data-mobile-menu]',
+			items: {{ navPages | raw }},
+		});
+	}(window.APP));
+</script>
+
+<div data-mobile-menu></div>
