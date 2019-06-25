@@ -47,7 +47,7 @@ module.exports = {
   entry: {
     scripts: './resources/assets/js/main.js',
     styles: './resources/assets/styles/main.css',
-    vendor: ['jquery', 'vue'],
+    vendor: ['vue'],
   },
   output: {
     path: path.resolve(__dirname, '../static/'),
@@ -72,7 +72,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['vue-style-loader', extractCss, cssLoader, 'postcss-loader'],
+        use: [extractCss, cssLoader, 'postcss-loader'],
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
@@ -106,9 +106,11 @@ module.exports = {
 
   resolve: {
     alias: {
-      vue$: 'vue/dist/vue.esm.js',
+			vue$: 'vue/dist/vue.esm.js',
+			"@@": path.resolve(__dirname, '../'),
+			"@": path.resolve(__dirname, '../resources/assets/js'),
       images: path.join(__dirname, '../resources/assets/images'),
-    },
+		},
     extensions: ['*', '.js', '.vue', '.json'],
   },
 
