@@ -1,45 +1,32 @@
-<header class="my-6">
-  <div class="container">
-    <div class="flex flex-wrap">
-      <div class="">
-        {% include 'atoms/logo/logo.twig' with { text: 'Skeleton', url: site.link } %}
-      </div>
-      <nav class="ml-8 flex-1 hidden md:block">
-        <div class="flex flex-wrap overflow-hidden md:-mx-1">
-        {% for item in menu.get_items %}
-          {% if item.get_children %}
-            {# <ul class="navbar-item has-dropdown is-hoverable md:px-1">
-              <a class="navbar-link {{ item.class }}" href="{{ site.link }}">
-                {{ item.title }}
-              </a>
+{# Merge both WordPress navs to pass into the mobile menu #}
+{% set combinedNavs = menu.get_items %}
+{# If no top_menu, remove this and the data context in timber.php #}
+{% if top_menu.get_items | default(false) %}
+	{% set combinedNavs = combinedNavs|merge(top_menu.get_items) %}
+{% endif %}
 
-              <ul class="navbar-dropdown is-hover second-level">
-                {% for child in item.get_children %}
-                  <li class="">
-                    <a class="navbar-item {{ child.class }} {{ child.get_children ? 'has-children' }}" href="{{ child.link }}">
-                      {{ child.title }}
-                    </a>
-                    {% if child.get_children %}
-                      <div class="navbar-dropdown third-level">
-                        {% for grandchild in child.get_children %}
-                          <a class="navbar-item {{ grandchild.class }}" href="{{ grandchild.link }}">
-                            {{ grandchild.title }}
-                          </a>
-                        {% endfor %}
-                      </div>
-                    {% endif %}
-                  </li>
-                {% endfor %}
-              </ul>
-            </ul> #}
-          {% else %}
-            <a class="navbar-item md:px-1 {{ item.class }}" href="{{ item.link }}">
-              {{ item.title }}
-            </a>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </nav>
-  </div>
-  </div>
+<header>
+	<div class="container">
+		<div class="flex flex-wrap items-center">
+			<div class="">
+				{% include '@components/atoms/logo/logo.twig' with {
+					text: site.title,
+					url: site.link
+				} only %}
+			</div>
+			{% include '@components/molecules/nav/nav.twig' with {
+				items: menu.get_items,
+				heading: "Main Navigation",
+				classList: ['ml-4', 'hidden', 'md:inline-block']
+			} only %}
+
+			<div class="ml-auto">
+				{% include '@components/molecules/mobile-menu/mobile-menu.twig' with {
+					items: combinedNavs,
+					text: site.title,
+					url: site.link
+				} only %}
+			</div>
+		</div>
+	</div>
 </header>
