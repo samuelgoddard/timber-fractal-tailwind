@@ -44,8 +44,8 @@ Timber::$dirname = ['resources/views', 'resources/components'];
  */
 function add_to_context($data)
 {
-    // Add Main Menu to Timber context object
-    $data['menu'] = new TimberMenu();
+	$data['menu'] = new \Timber\Menu( 'main_menu' );
+	$data['top_menu'] = new \Timber\Menu( 'top_menu' );
 
     // Add main-sidebar to Timber context object
     $data['main_sidebar'] = Timber::get_widgets('main-sidebar');
