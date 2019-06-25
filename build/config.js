@@ -15,20 +15,4 @@ module.exports = {
    * This is for Browsersync.
    */
   devUrl: 'http://boilerplate.localdev/',
-
-  /**
-   * You can whitelist selectors to stop purgecss from removing them from your CSS
-   *
-   * whitelist: ['random', 'yep', 'button']
-   * In the example, the selectors .random, #yep, button will be left in the final CSS
-   */
-  whitelist: [],
-  purgecss: {
-    whitelist: [],
-    whitelistPatterns: [
-      /--/,
-    ],
-    cssFileExtensions: ["css", "less", "pcss", "postcss", "sass", "scss", "styl"],
-    cssUserFileExtensions: ["html", "twig", "vue", ""],
-  },
 };
