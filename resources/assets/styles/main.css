@@ -15,6 +15,10 @@
 @import "../../components/atoms/paragraph/_paragraph.css";
 @import "../../components/atoms/table/_table.css";
 
+/* Molecules */
+@import "../../components/molecules/nav/_nav.css";
+@import "../../components/molecules/mobile-menu/_mobile-menu.css";
+
 /* Utilities */
 @import "../../components/utilities/_trim.css";
 @import "../../components/utilities/_pretty.css";
@@ -23,7 +27,9 @@
 @import "tailwindcss/utilities.css";
 
 body {
-  @apply antialiased bg-white text-black text-base;
+	@apply antialiased bg-white text-black text-base;
+
+	min-width: 320px !important;
 }
 
 .aligncenter {
