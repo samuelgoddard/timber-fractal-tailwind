@@ -1,0 +1,19 @@
+title: Nav
+status: ready
+
+context:
+  items:
+    -
+      title: Parent Item One
+      link: '#'
+    -
+      title: Parent Item Two
+      link: '#'
+      get_children:
+        -
+          title: Child Item One
+          link: '#'
+        -
+          title: Child Item Two
+          link: '#'
+

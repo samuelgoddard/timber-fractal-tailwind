@@ -1,0 +1,39 @@
+{#
+ # Navigation molecule
+ #
+ # @param heading {string} the aria-label for this navigation
+ # @param items {array} the array of items to feed into this navigation
+ # @param *optional classList {array} the classList array that can be passed into this hero
+ #}
+
+<nav
+	class="m-nav {% if classList | default(false) %}{% for class in classList %}{{ class }} {% endfor %}{% endif %}"
+	role="navigation"
+	aria-label="{{ heading | default("Navigation") }}"
+>
+	<ul class="flex flex-wrap">
+		{% for item in items %}
+			{% if item.get_children %}
+				<li class="relative">
+					<a class="nav-item has--dropdown {{ item.class | default(false) }}" href="{{ item.url }}" aria-haspopup="true" tabindex="0">
+						{{ item.title }} <i class="far fa-angle-down"></i>
+					</a>
+
+					<ul class="subnav" aria-hidden="true" aria-label="subnav">
+						{% for child in item.get_children %}
+							<li class="">
+								<a class="nav-item {{ child.class }}" href="{{ child.url }}" tabindex="0">
+									{{ child.title }}
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</li>
+			{% else %}
+				<li>
+					<a class="nav-item {{ item.class | default(false) }}" href="{{ item.url }}" tabindex="0">{{ item.title }}</a>
+				</li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+</nav>

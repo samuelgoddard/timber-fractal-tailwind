@@ -1,0 +1,29 @@
+.nav-item {
+	@apply
+		block
+		p-3
+		relative;
+
+		&.is--active, {
+			@apply text-primary-base;
+		}
+}
+
+.subnav {
+	@apply
+		absolute
+		top-0
+		left-0
+		mt-12
+		hidden
+		bg-white
+		w-full
+		min-w-48;
+}
+
+/* Hover state for subnav */
+.has--dropdown:hover + .subnav, .has--dropdown:focus + .subnav, .has--dropdown:focus-within > .subnav,
+.subnav:hover,
+.m-nav ul li:hover > ul, .m-nav li:focus-within > ul  {
+	@apply block;
+}
