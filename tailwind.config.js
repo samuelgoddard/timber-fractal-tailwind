@@ -105,7 +105,7 @@ module.exports = {
     },
     container: {
       center: true,
-      padding: '2rem',
+      padding: '1.5rem',
     },
     cursor: {
       auto: 'auto',
@@ -245,10 +245,11 @@ module.exports = {
       full: '100%',
       screen: '100vh',
     },
-    minWidth: {
+    minWidth: theme => ({
+			...theme('spacing'),
       '0': '0',
       full: '100%',
-    },
+		}),
     objectPosition: {
       bottom: 'bottom',
       center: 'center',
