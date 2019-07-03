@@ -43,3 +43,9 @@ body {
 .alignright {
   @apply float-right ml-5 mb-5;
 }
+
+.js\:hidden {
+  .js-loaded & {
+    @apply hidden;
+  }
+}

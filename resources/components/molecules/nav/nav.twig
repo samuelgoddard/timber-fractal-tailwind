@@ -16,7 +16,7 @@
 			{% if item.get_children %}
 				<li class="relative">
 					<a class="nav-item has--dropdown {{ item.class | default(false) }}" href="{{ item.url }}" aria-haspopup="true" tabindex="0">
-						{{ item.title }} <i class="far fa-angle-down"></i>
+						{{ item.title }} <div class="inline-block w-2"><i class="far fa-angle-down"></i></div>
 					</a>
 
 					<ul class="subnav" aria-hidden="true" aria-label="subnav">

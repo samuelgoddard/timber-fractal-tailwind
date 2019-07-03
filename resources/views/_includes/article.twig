@@ -12,13 +12,13 @@
       </div>
       {% if post.can_edit %}
         <div class="md:px-2">
-          <a class="text-xs" href="{{ post.get_edit_url }}"><span>{{ messages.article.edit }}</span></a>
+          <a class="text-xs" href="{{ post.get_edit_url }}"><span>Edit</span></a>
         </div>
       {% endif %}
     </div>
   </header>
 
-  {{ post.content | length > 50 
+  {{ post.content | length > 50
     ? post.content | slice(0, 120) ~ "... <a href='#{ post.link }'>read more</a>"
     : post.content
   }}

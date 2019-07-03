@@ -28,7 +28,10 @@
 
   {% if url | default(false) %}
   <div>
-    <a href="{{ url }}" class="btn">Read more</a>
+		{% include '@components/atoms/btn/btn.twig' with {
+			text: "Read more",
+			href: url
+		} only %}
   </div>
   {% endif %}
 

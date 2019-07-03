@@ -24,6 +24,15 @@
   }
 }
 
+.btn--black {
+  @apply bg-black text-white;
+
+  &:hover,
+  &:focus {
+    @apply bg-grey-dark text-white;
+  }
+}
+
 .btn--white {
   @apply bg-white text-black;
 
@@ -48,4 +57,21 @@ button {
   &:disabled {
     @apply opacity-25;
   }
+}
+
+.btn--reset {
+	@apply
+    inline-block
+    text-black
+		text-left
+		font-normal
+    bg-transparent
+    underline
+    px-0
+		py-0;
+
+	&:hover,
+	&:focus {
+		@apply bg-transparent text-primary-dark cursor-pointer;
+	}
 }

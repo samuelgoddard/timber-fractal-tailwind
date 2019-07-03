@@ -1,12 +1,7 @@
 <script>
 import scrollIntoView from "smooth-scroll-into-view-if-needed";
 
-// import Icon from "@/components/atoms/icon/Icon";
-
 export default {
-  components: {
-    // Icon,
-  },
   props: {
     id: {
       required: true,
@@ -39,7 +34,7 @@ export default {
   },
   computed: {
     expandIcon() {
-      return this.isExpanded ? "caret-top" : "caret-bottom";
+      return this.isExpanded ? "minus" : "plus";
     },
     ariaLabel() {
       return `${this.text} - expand for more information`;

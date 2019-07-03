@@ -1,12 +1,12 @@
 <template>
 	<div>
-		<transition name="fade">
+		<transition name="fade" mode="out-in">
 			<div class="fixed top-0 bottom-0 left-0 right-0 w-full z-40" v-if="menuExpanded" @click="closeMenu">
 				<div class="w-full h-full bg-black opacity-75">
 				</div>
 			</div>
 		</transition>
-		<transition name="slide-fade">
+		<transition name="slide-fade" mode="out-in">
 			<div
 				class="fixed top-0 bottom-0 right-0 w-4/5 bg-white z-50 overflow-y-scroll"
 				id="mobile-menu"

@@ -1,5 +1,11 @@
 {% extends "_layouts/application.twig" %}
 
 {% block content %}
-  <h1>404 Page Not Found</h1>
+{% include 'molecules/hero/hero.twig' with {
+	subHeading: '404 Page not found',
+	classList: ['py-6 mb-6']
+} only %}
+<div class="container">
+  <p>We're sorry, but that page couldn't be found. Please return to our <a href="{{ site.url }}">home page</a>.</p>
+</div>
 {% endblock %}

@@ -3,45 +3,14 @@
  #
  # @param text {string} The text of the button
  # @param id {string|null} ID attr value
- #
- # @param external {boolean|null} Is this an external link?
- # @param download {boolean|null} Is this a download link?
- #
- # @param attrs {object|null} HTML attrs for outer HTML element
  # @param modifiers {array|null} BEM modifier handles for outer HTML element
-  (will be prefixed with Base class)
- # @param data {object|null} HTML data attrs (no data- prefix, camelcased)
  # @param href {string|null} href attr value
- # @extends @atom
  #}
 
-{%- set type = type | default(null) -%}
 
-{%- set el = el | default('a') -%}
-{%- if type -%}
-  {%- set el = 'button' -%}
-{%- endif -%}
-{%- set id = id | default(null) -%}
-{%- set attrs = attrs | default({}) -%}
-{%- set classList = classList | default([]) -%}
-{%- set modifiers = modifiers | default([]) -%}
-{%- set data = data | default({}) -%}
-{%- if href | default(false) -%}
-  {%- set attrs = attrs | merge({ href: href }) -%}
-{%- endif -%}
-
-{%- if type -%}
-  {%- set attrs = attrs | merge({ type: type }) -%}
-{%- endif -%}
-
-{%- set config = {} -%}
-
-{%- for prop in ['attrs', 'data', 'classList', 'modifiers', 'id', 'el', 'href']  -%}
-  {%- set config = config | merge({(prop): _context[prop] }) -%}
-{%- endfor -%}
-
-{% embed 'atoms/_base.twig' with config | merge({
-    baseClass: 'btn',
-    content: text
-  }) %}
-{% endembed %}
+<a
+	href="{{ href }}"
+	class="btn{% if classList is defined and classList %}{% for class in classList %} {{ class }}{% endfor %}{% endif %}{% if modifiers is defined and modifiers %}{% for modifier in modifiers %} btn--{{ modifier }}{% endfor %}{% endif %}"
+>
+	{{ text }}
+</a>

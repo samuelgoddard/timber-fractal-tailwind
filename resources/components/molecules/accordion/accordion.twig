@@ -1,0 +1,39 @@
+{#
+ # Accordion Molecule
+ #
+ # @param {string} heading the heading text for the accordion
+ # @param {boolean} open whether or not the accordions content is open by default
+ # @param {string/block} content either a string or block to feed in the inner content
+ #}
+
+{% set open = open ?? false %}
+{% set id = id ?? 'tab-' ~ random(999999) %}
+
+<h6 id="{{ id }}"
+	class="w-full block"
+	data-accordion
+	data-target="#accordion-panel-{{ id }}"
+>
+	<button
+		id="accordion-button-{{ id }}"
+		aria-controls="accordion-panel-{{ id }}"
+		aria-expanded="false"
+		class="block btn--reset font-bold no-underline w-full border-b border-grey-base py-3"
+	>
+		<span data-accordion-heading>
+			{{ heading | raw }}
+		</span>
+	</button>
+</h6>
+
+<div
+	id="accordion-panel-{{ id }}"
+	role="region"
+  aria-labelledby="accordion-button-{{ id }}"
+	{% if not open %}class="js:hidden"{% endif %}
+	data-accordion-target
+>
+	{% block innerContent %}
+		{{ content }}
+	{% endblock %}
+</div>

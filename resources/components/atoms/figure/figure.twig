@@ -6,7 +6,7 @@
  #}
 
 <figure {% if classList | default(false) %}class="{% for class in classList %}{{ class }} {% endfor %}"{% endif %}>
-  <img class="w-full block p-0 m-0 relative z-10" src="{{ image.url }}" alt="{{ image.alt }}">
+  <img class="w-full block p-0 m-0 relative" src="{{ image.url }}" alt="{{ image.alt }}">
   {% if caption | default(false) %}
     <figcaption>{{ caption }}</figcaption>
   {% endif %}

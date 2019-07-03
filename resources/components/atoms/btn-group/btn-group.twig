@@ -11,12 +11,8 @@
  # @param btn.href {string|null} href attr value
  #}
 
-{% if buttons %}
 <div class='btn-group'>
-  {% block content %}
-    {% for btn in buttons|default([]) %}
-      {% include '@btn' with btn only %}
-    {% endfor %}
-  {% endblock %}
+	{% for btn in buttons|default([]) %}
+		{% include '@components/atoms/btn/btn.twig' with btn only %}
+	{% endfor %}
 </div>
-{% endif %}

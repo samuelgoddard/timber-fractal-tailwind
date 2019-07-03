@@ -7,11 +7,6 @@ context:
 
 variants:
   -
-    name: button
-    context:
-      el: button
-      text: 'Button Tag Button'
-  -
     name: long
     context:
       text: 'This is an example of a button with really really really really really really long inner text'
@@ -28,6 +23,12 @@ variants:
       modifiers:
         - 'white'
   -
+    name: black
+    context:
+      text: 'Black Button'
+      modifiers:
+        - 'black'
+  -
     name: naked
     context:
       text: 'Naked Button'
@@ -38,4 +39,4 @@ variants:
     context:
       text: 'I have a custom class'
       classList:
-        - 'border-2 border-secondary'
+        - 'border-2 border-secondary-base'

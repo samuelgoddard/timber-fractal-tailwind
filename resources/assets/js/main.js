@@ -12,20 +12,9 @@
 // $('.navbar-burger').on('click', () => $('.navbar-burger, .navbar-menu').toggleClass('is-active'));
 
 import Vue from "vue";
-
-import { library, dom } from '@fortawesome/fontawesome-svg-core';
-import { faAngleDown, faBars, faTimes } from '@fortawesome/pro-regular-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-
-Vue.component('font-awesome-icon', FontAwesomeIcon);
-
-library.add(faAngleDown, faBars, faTimes);
-dom.i2svg();
-dom.watch()
-
 import svg4everybody from "svg4everybody";
-
 import polyfill from "./polyfills";
+import './lib/font-awesome';
 // import "@/assets/styles/app.postcss";
 // import "@/lib/svg-sprite";
 import initModules from "./lib/init-modules";
