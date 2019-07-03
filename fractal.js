@@ -43,8 +43,7 @@ fractal.components.engine(twigAdapter({
   },
   namespaces: {
     'components': ''
-  },
-  handlePrefix: '%',
+  }
 }));
 fractal.components.set("ext", ".twig");
 
