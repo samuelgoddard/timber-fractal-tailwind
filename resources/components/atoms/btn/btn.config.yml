@@ -7,6 +7,11 @@ context:
 
 variants:
   -
+    name: small
+    context:
+      modifiers:
+        - 'small'
+  -
     name: long
     context:
       text: 'This is an example of a button with really really really really really really long inner text'

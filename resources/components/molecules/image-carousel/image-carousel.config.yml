@@ -1,0 +1,28 @@
+title: Image Carousel
+status: ready
+
+context:
+  preview:
+    noPad: true
+  perView: 3
+  mobilePerView: 1
+  images:
+    -
+      src: https://placedog.net/600/450"
+      title: Dog
+    -
+      src: https://placedog.net/650/450"
+      title: Dog
+    -
+      src: https://placedog.net/620/450"
+      title: Dog
+
+variants:
+  -
+    name: With Controls
+    context:
+      controls: true
+  -
+    name: With Lightbox
+    context:
+      lightbox: true

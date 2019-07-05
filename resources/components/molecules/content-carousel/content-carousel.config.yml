@@ -1,0 +1,20 @@
+title: Content Carousel
+status: ready
+
+context:
+  perView: 3
+  mobilePerView: 1
+  images: false
+  items:
+    -
+      heading: Carousel Block One
+      excerpt: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+    -
+      heading: Carousel Block Two
+      excerpt: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+    -
+      heading: Carousel Block Three
+      excerpt: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex

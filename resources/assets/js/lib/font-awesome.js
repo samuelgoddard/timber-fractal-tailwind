@@ -1,5 +1,4 @@
 import Vue from 'vue';
-
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { faAngleDown, faBars, faTimes, faPlus, faMinus } from '@fortawesome/pro-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';

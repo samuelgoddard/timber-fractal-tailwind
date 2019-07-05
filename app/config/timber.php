@@ -60,7 +60,10 @@ function add_to_context($data)
     $data['current_template_file'] = basename($GLOBALS['template']);
 
     // Extend TimberSite object
-    $data['site'] = new SkeletonSite();
+	$data['site'] = new SkeletonSite();
+
+	$data['options'] = get_fields('options');
+
 
     $data['in_production'] = bc_env('MODE', 'production') === 'production';
 

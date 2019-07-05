@@ -1,10 +1,7 @@
-// import objectFitImages from "object-fit-images";
-// import arrayPrototypeFindIndex from "jspolyfill-array.prototype.findIndex";
-// import arrayPrototypeFind from "./Array.prototype.find";
+// import something from "something";
 
 export default () =>
   new Promise((resolve) => {
-    // arrayPrototypeFind();
-    // objectFitImages();
+    // something();
     resolve();
   });

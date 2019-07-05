@@ -1,7 +1,18 @@
+{%- set galleryItems -%}
+	[
+		{% for image in post.meta('gallery') %}
+			{
+				"url": "{{ Image(image) | resize(600, 450, 'center') }}",
+				"id": "{{ image.id }}"
+			}{%- if not loop.last -%},{%- endif -%}
+		{%- endfor -%}
+	]
+{%- endset -%}
+
 {% extends "_layouts/application.twig" %}
 
 {% block content %}
-  {% include 'molecules/hero/hero.twig' with { 
+  {% include '@components/molecules/hero/hero.twig' with {
     subHeading: post.title,
     classList: ['py-6 mb-6']
   } only %}
@@ -11,4 +22,15 @@
       {{ post.content }}
     </article>
   </div>
+
+	{% if post.meta('gallery') %}
+		{% include '@components/molecules/image-carousel/image-carousel.twig' with {
+			lightbox: true,
+			perView: 3,
+			controls: true,
+			mobilePerView: 1,
+			images: post.meta('gallery'),
+			integrated: true
+		} only %}
+	{% endif %}
 {% endblock %}

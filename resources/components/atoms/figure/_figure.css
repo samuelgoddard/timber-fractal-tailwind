@@ -6,7 +6,6 @@ figure {
   @apply
     mb-4
     inline-block
-    relative
     max-w-full;
 }
 

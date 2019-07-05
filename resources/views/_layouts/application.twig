@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="sr js-loading">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8mb4">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>
@@ -20,6 +20,10 @@
     <meta name="theme-color" content="#000000">
     <meta name="description" content="{{ site.description }}">
 
+		{# Google Anlaytics Script #}
+		{{ options.google_analytics }}
+		{{ options.schema }}
+
     <link rel="pingback" href="{{ site.pingback_url }}"/>
 
     <script>
@@ -33,7 +37,7 @@
         CONFIG: {
         },
       };
-    </script>
+		</script>
 
     {{ function('wp_head') }}
   </head>
@@ -45,21 +49,6 @@
         {{ current_template_file }}
       </div>
     {% endif %}
-
-    {# <h6 class="mb-0">
-      <a href="#mod-1"
-        id="toggle-more-1"
-        data-toggle="toggle"
-        data-target="#mod-1"
-        aria-expanded="false"
-        aria-controls="mod-1">
-        Title <span class="font-normal">(Hey)</span>
-      </a>
-    </h6>
-    <div id="mod-1" class="js:hidden pt-4">
-    <div class="mb-5 trim">This is some hidden stuff</div>
-    </div>
-    #}
 
     {% include '_includes/chrome/header.twig' %}
 

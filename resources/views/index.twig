@@ -1,6 +1,11 @@
 {% extends "_layouts/application.twig" %}
 
 {% block content %}
+
+{# {{ dump(options) }} #}
+
+{{ options.google_analytics }}
+
   {% include('@components/molecules/hero/hero.twig') with {
     heading: site.title | capitalize,
     excerpt: site.description,

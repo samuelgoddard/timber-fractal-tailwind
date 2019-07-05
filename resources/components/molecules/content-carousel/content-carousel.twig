@@ -1,0 +1,26 @@
+<div class="container">
+	<div
+		class="carousel"
+		data-carousel-view="{{ perView | default(3) }}"
+		data-carousel-mobile-view="{{ mobilePerView | default(1) }}"
+	>
+		<div class="glide__track" data-glide-el="track">
+			<ul class="glide__slides flex flex-wrap md:-mx-2">
+				{% if items | default(false) %}
+					{% for item in items %}
+						<li class="glide__slide w-full md:w-1/3 md:px-2">
+							<h4>{{ item.heading }}</h4>
+							<p>{{ item.excerpt}}</p>
+						</li>
+					{% endfor %}
+				{% endif %}
+			</ul>
+		</div>
+		{% if controls | default(true) %}
+			<div data-glide-el="controls">
+				<button data-glide-dir="<" class="btn btn--small">prev</button>
+				<button data-glide-dir=">" class="btn btn--small">next</button>
+			</div>
+		{% endif %}
+	</div>
+</div>

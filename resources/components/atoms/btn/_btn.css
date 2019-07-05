@@ -15,6 +15,20 @@
   }
 }
 
+.btn--small {
+  @apply text-sm px-2 py-1;
+}
+
+.btn--black {
+  @apply bg-black text-white;
+
+  &:hover,
+  &:focus {
+    @apply bg-grey-dark text-white;
+  }
+}
+
+
 .btn--grey {
   @apply bg-grey-base text-black;
 

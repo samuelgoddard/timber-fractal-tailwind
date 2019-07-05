@@ -1,0 +1,41 @@
+<div class="container">
+	<div
+		class="carousel {% if lightbox | default(false) %}lightbox{% endif %}"
+		data-carousel-view="{{ perView | default(3) }}"
+		data-carousel-mobile-view="{{ mobilePerView | default(1) }}"
+	>
+		<div class="glide__track mb-3" data-glide-el="track">
+			<ul class="glide__slides flex flex-wrap md:-mx-2">
+				{% if images | default(false) %}
+					{% for image in images %}
+						<li class="glide__slide w-full md:w-1/3 md:px-2">
+							{% if integrated |default(false) %}
+								{% if lightbox | default(false) %}
+									<a href="{{ Image(image) | resize(600, 450, 'center') }}" data-caption="Image caption">
+								{% endif %}
+									<img src="{{ Image(image) | resize(600, 450, 'center') }}" class="w-full" alt="{{ image.title | default('image') }}" />
+								{% if lightbox | default(false) %}
+									</a>
+								{% endif %}
+							{% else %}
+								{% if lightbox | default(false) %}
+									<a href="{{ image.src }}" data-caption="Image caption">
+								{% endif %}
+								<img src="{{ image.src }}" class="w-full" alt="{{ image.title }}"/>
+								{% if lightbox | default(false) %}
+									</a>
+								{% endif %}
+							{% endif %}
+						</li>
+					{% endfor %}
+				{% endif %}
+			</ul>
+		</div>
+		{% if controls | default(false) %}
+			<div data-glide-el="controls">
+				<button data-glide-dir="<" class="btn btn--small">prev</button>
+				<button data-glide-dir=">" class="btn btn--small">next</button>
+			</div>
+		{% endif %}
+	</div>
+</div>
