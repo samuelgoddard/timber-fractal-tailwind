@@ -1,14 +1,14 @@
 ## WordPress / Timber / Webpack / Fractal / Tailwind
 
 ## Features
-* [Webpack](https://webpack.github.io/) for asset bundling
+* [Webpack](https://webpack.github.io/) for asset bundling / optimisation etc
 * [Timber](https://www.upstatement.com/timber/) for Twig templating
 * [Fractal](https://fractal.build/) for component based development / styleguide
-* [PostCSS](https://postcss.org/) for styles, with plugins for nesting, importing and modern presents
+* [PostCSS](https://postcss.org/) for styles, with plugins for nesting, importing and modern presents & more
 * [CSSNano](https://cssnano.co) for asset minification
-* [BrowserSync](https://www.browsersync.io/) while I figure out getting HMR working
+* [BrowserSync](https://www.browsersync.io/) interim while i get HMR working
 * [Tailwind](https://tailwindcss.com/) utility first CSS framework
-* [Purgecss](https://github.com/FullHuman/purgecss) for build optimisation
+* [Purgecss](https://github.com/FullHuman/purgecss) for purging tailwind / built CSS
 * [Webpack Manifest](webpack-manifest-plugin) Manifest Filter / Caching
 * [Babel](https://babeljs.io/) compiler for ES6 Javascript
 * Javascript code chunking
