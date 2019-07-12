@@ -59,7 +59,7 @@
 │   │   ├── images/                                 # Local theme imagery
 │   │   ├── styles/                                 # Styles
 │   │   │   └── main.css        
-│   ├── components/                                 # Fractal Components / CSS
+│   ├── components/                                 # Fractal / Twig Components / CSS
 │   ├── docs/                                       # Fractal Documentation
 │   └── views/                                      # Theme Twig files
 │   │   ├── _includes/                              # Non-Fractal based twig includes
