@@ -31,3 +31,56 @@
 * `yarn watch` **or** `npm run watch` to run a development server, as well as a Fractal server alongside at a seperate port
 * `yarn prod` **or** `npm run prod` to build for production
 
+## Directory Structure	
+
+```
+|                                        
+├── app/                                            
+│   ├── config/                                     
+│   │   ├── wp/                                     # Restructured / Split functions
+│   │   ├── autoload.php                            # Functions splitting
+│   │   └── timber.php                              # Timber global context etc
+│   ├── bootstrap.php                               # Init
+│   └── helpers.php                                 # Common helper functions
+
+├── build/                                          
+│   ├── config.js                                   # Custom asset path / devUrl
+│   └── webpack.config.js                           # Webpack config
+
+├── resources/                                      # Templating
+│   ├── assets/                                     # Front-end assets
+│   │   ├── fonts/                                  # Local fonts
+│   │   ├── js/                                     # Javascripts
+│   │   │   ├── design-tokens/                      # JS design tokens (WIP)
+│   │   │   ├── lib/                                # Local library scripts
+│   │   │   ├── polyfills/                          # Polyfilling
+│   │   │   ├── store/                              # Vuex store
+│   │   │   └── main.js                             
+│   │   ├── images/                                 # Local theme imagery
+│   │   ├── styles/                                 # Styles
+│   │   │   └── main.css                           	
+│   ├── components/                                 # Fractal Components / CSS
+│   ├── docs/                                       # Fractal Documentation
+│   └── views/                                      # Theme Twig files
+│   │   ├── _includes/                              # Non-Fractal based twig includes
+│   │   ├── _layouts/								# Twig layouts
+│   │   └── header/                                 # Theme header templates
+
+├── README.md
+├── archive.php
+├── author.php
+├── composer.json
+├── composer.lock
+├── fractal.js										# Fractal config (will move)
+├── functions.php
+├── index.php
+├── package.json
+├── page.php
+├── postcss.config.js								# PostCSS Config (will move)
+├── search.php
+├── searchform.php
+├── single.php
+├── style.css
+├── tailwind.config.js								# Tailwind Config (will move)
+└── yarn.lock
+```
