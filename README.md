@@ -58,12 +58,12 @@
 │   │   │   └── main.js                             
 │   │   ├── images/                                 # Local theme imagery
 │   │   ├── styles/                                 # Styles
-│   │   │   └── main.css                           	
+│   │   │   └── main.css        
 │   ├── components/                                 # Fractal Components / CSS
 │   ├── docs/                                       # Fractal Documentation
 │   └── views/                                      # Theme Twig files
 │   │   ├── _includes/                              # Non-Fractal based twig includes
-│   │   ├── _layouts/								                # Twig layouts
+│   │   ├── _layouts/                               # Twig layouts
 │   │   └── header/                                 # Theme header templates
 
 ├── README.md
@@ -71,16 +71,16 @@
 ├── author.php
 ├── composer.json
 ├── composer.lock
-├── fractal.js										                  # Fractal config (will move)
+├── fractal.js                                      # Fractal config (will move)
 ├── functions.php
 ├── index.php
 ├── package.json
 ├── page.php
-├── postcss.config.js								                # PostCSS Config (will move)
+├── postcss.config.js                               # PostCSS Config (will move)
 ├── search.php
 ├── searchform.php
 ├── single.php
 ├── style.css
-├── tailwind.config.js							 	              # Tailwind Config (will move)
+├── tailwind.config.js                              # Tailwind Config (will move)
 └── yarn.lock
 ```
